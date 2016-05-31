@@ -19,5 +19,5 @@ def takeTurn(): #Go through the phases in a turn
 
     technology()
 
-    ast()
+    return ast()
 

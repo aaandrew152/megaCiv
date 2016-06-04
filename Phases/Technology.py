@@ -1,10 +1,10 @@
-def technology():
-    buyTech()
+def technology(playerList):
+    buyTech(playerList)
 
-    discardExcess()
+    discardExcess(playerList)
 
-def buyTech():
+def buyTech(playerList):
     pass # TODO fill in
 
-def discardExcess():
+def discardExcess(playerList):
     pass # TODO fill in

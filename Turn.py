@@ -7,20 +7,20 @@ from Phases.Technology import technology
 from Phases.Ast import ast, checkGameEnd
 
 def takeTurn(playerList): #Go through the phases in a turn
-    gameEnd = checkGameEnd()
+    gameEnd = checkGameEnd(playerList)
 
-    update()
+    update(playerList)
 
-    movement()
+    movement(playerList)
 
-    trade()
+    trade(playerList)
 
-    calamities()
+    calamities(playerList)
 
-    specialAbilities()
+    specialAbilities(playerList)
 
-    technology()
+    technology(playerList)
 
-    ast()
-
+    ast(playerList)
+    playerList[0].civ = 5
     return gameEnd

@@ -1,15 +1,14 @@
 from CheckSupport import checkSupport
 
+def movement(playerList): #Move player by player, resolve combat, cities, support limits
+    move(playerList)
 
-def movement(): #Move player by player, resolve combat, cities, support limits
-    move()
+    combat(playerList)
 
-    combat()
+    checkSupport(playerList)
 
-    checkSupport()
-
-def move():
+def move(playerList):
     pass # TODO fill in
 
-def combat():
+def combat(playerList):
     pass # TODO fill in

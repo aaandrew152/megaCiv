@@ -1,10 +1,10 @@
-def update(): # Taxation and repopulation
-    taxation()
+def update(playerList): # Taxation and repopulation
+    taxation(playerList)
 
-    populate()
+    populate(playerList)
 
-def taxation():
+def taxation(playerList):
     pass # TODO fill in
 
-def populate():
+def populate(playerList):
     pass # TODO fill in

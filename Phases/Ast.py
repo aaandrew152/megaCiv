@@ -1,8 +1,8 @@
-def ast():
-    advance()
+def ast(playerList):
+    advance(playerList)
 
-def advance():
+def advance(playerList):
     pass # TODO fill in
 
-def checkGameEnd(): #True if end is next turn
+def checkGameEnd(playerList): #True if end is next turn
     pass # TODO fill in

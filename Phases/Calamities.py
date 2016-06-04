@@ -1,10 +1,10 @@
-def calamities(): #Determine number, and resolve in ascending order
-    discardExcess()
+def calamities(playerList): #Determine number, and resolve in ascending order
+    discardExcess(playerList)
 
-    resolveCalamities()
+    resolveCalamities(playerList)
 
-def discardExcess():
+def discardExcess(playerList):
     pass # TODO fill in
 
-def resolveCalamities():
+def resolveCalamities(playerList):
     pass # TODO fill in

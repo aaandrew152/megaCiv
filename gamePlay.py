@@ -3,8 +3,8 @@ from Turn import takeTurn
 
 playerList = setup()
 
-gameNotOver = False
+gameOver = False
 
-while gameNotOver:
-    gameNotOver = takeTurn(playerList)
-    print(playerList[0].civ)
+while not gameOver:
+    gameOver = takeTurn(playerList)
+    gameOver = True

@@ -7,7 +7,7 @@ def setup():
     return playerList
 
 def getPlayers(): #Gets player number and creates player objects
-    numPlayers = input('How many players?')
+    numPlayers = int(input('How many players?'))
 
     playerList = []
     for player in range(numPlayers):

@@ -1,10 +1,10 @@
-def trade():
-    drawCards()
+def trade(playerList):
+    drawCards(playerList)
 
-    tradeCards()
+    tradeCards(playerList)
 
-def drawCards():
+def drawCards(playerList):
     pass # TODO fill in
 
-def tradeCards():
+def tradeCards(playerList):
     pass # TODO fill in

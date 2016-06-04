@@ -1,10 +1,10 @@
 from CheckSupport import checkSupport
 
 
-def specialAbilities():
-    resolveTechs()
+def specialAbilities(playerList):
+    resolveTechs(playerList)
 
-    checkSupport()
+    checkSupport(playerList)
 
-def resolveTechs():
+def resolveTechs(playerList):
     pass # TODO fill in

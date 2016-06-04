@@ -7,6 +7,8 @@ from Phases.Technology import technology
 from Phases.Ast import ast
 
 def takeTurn(): #Go through the phases in a turn
+    gameEnd = checkGameEnd()
+
     update()
 
     movement()
@@ -19,5 +21,6 @@ def takeTurn(): #Go through the phases in a turn
 
     technology()
 
-    return ast()
+    ast()
 
+    return gameEnd

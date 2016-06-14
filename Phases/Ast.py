@@ -5,4 +5,7 @@ def advance(playerList):
     pass # TODO fill in
 
 def checkGameEnd(playerList): #True if end is next turn
-    pass # TODO fill in
+    for player in playerList:
+        if player.ast == 18: #Check number
+            return True
+    return False

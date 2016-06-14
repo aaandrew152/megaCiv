@@ -4,7 +4,13 @@ def update(playerList): # Taxation and repopulation
     populate(playerList)
 
 def taxation(playerList):
-    pass # TODO fill in
+    for player in playerList:
+        numRevolts = player.gainGold(player.numCities())
+
+        if numRevolts:
+            pass #TODO add in tax revolts
 
 def populate(playerList):
-    pass # TODO fill in
+    for player in playerList:
+        for space in boardSpaces:
+            pass #TODO determine how board works

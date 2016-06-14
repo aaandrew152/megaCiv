@@ -22,5 +22,5 @@ def takeTurn(playerList): #Go through the phases in a turn
     technology(playerList)
 
     ast(playerList)
-    playerList[0].civ = 5
+
     return gameEnd

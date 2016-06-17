@@ -10,10 +10,14 @@ class Player(object):
         cityList = [city for city in self.cities if city > 0]
         return len(cityList)
 
-    def stockIndexes(self): #Returns indexes of units in stock
-        return [idx for idx, unit in enumerate(self.units)]
+    def numUnits(self, space):
+        unitSpace = [unit for unit in self.units if unit == space]
+        return len(unitSpace)
 
-    def gainGold(self, number):
+    def stockIndexes(self): #Returns indexes of units in stock
+        return [idx for idx, unit in enumerate(self.units) if unit == 0]
+
+    def gainGold(self, number): #Returns number of revolts
         stockIdxs = self.stockIndexes()
 
         if len(stockIdxs) < number:
@@ -27,8 +31,28 @@ class Player(object):
 
             return 0
 
-    def numUnits(self, space):
-        pass
+    def addUnits(self, space, number):
+        stockIdxs = self.stockIndexes()
+        if len(stockIdxs) >= number:
+            for idx in range(number):
+                self.units[stockIdxs[idx]] = space
+            return True
+        else:
+            for stIdx in stockIdxs:
+                self.units[stIdx] = space
+            return False
+
+    def repopulate(self, space):
+        units = self.numUnits(space)
+
+        if units == 1:
+            return self.addUnits(space, 1)
+        elif units >= 2:
+            return self.addUnits(space, 2)
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-from CheckSupport import checkSupport
+from Phases.CheckSupport import checkSupport
 
 
 def specialAbilities(playerList):

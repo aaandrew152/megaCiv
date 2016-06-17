@@ -1,0 +1,1 @@
+spaces = [int(quot/4) for quot in range(20)] #0 * 4, 1 * 4, ..., 4 * 4

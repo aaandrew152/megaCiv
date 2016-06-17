@@ -1,10 +1,16 @@
-class Board(object):
-    def __init__(self):
-        self.spaces = [0] * 16
+from settings import spaces
 
-    def number(self, space, playerList):
+class Board(object):
+    def __init__(self, areas):
+        self.areas = areas
+
+    @staticmethod
+    def numberInArea(area, playerList):
         num = 0
         for player in playerList:
-            num += player.numUnits(space)
+            num += player.numUnits(area)
         return num
+
+
+board = Board(spaces)
 

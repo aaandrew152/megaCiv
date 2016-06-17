@@ -1,4 +1,4 @@
-from CheckSupport import checkSupport
+from Phases.CheckSupport import checkSupport
 
 def movement(playerList): #Move player by player, resolve combat, cities, support limits
     move(playerList)

@@ -1,5 +1,5 @@
-from gameStart import setup
-from Turn import takeTurn
+from Game.Turn import takeTurn
+from Game.gameStart import setup
 
 playerList = setup()
 

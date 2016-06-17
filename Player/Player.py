@@ -27,6 +27,9 @@ class Player(object):
 
             return 0
 
+    def numUnits(self, space):
+        pass
+
 
 
 

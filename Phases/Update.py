@@ -1,3 +1,5 @@
+from Board import board
+
 def update(playerList): # Taxation and repopulation
     taxation(playerList)
 
@@ -12,5 +14,5 @@ def taxation(playerList):
 
 def populate(playerList):
     for player in playerList:
-        for space in boardSpaces:
+        for space in board.spaces:
             pass #TODO determine how board works

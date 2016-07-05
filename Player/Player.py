@@ -1,3 +1,5 @@
+from Board import board
+
 class Player(object):
     def __init__(self):
         self.civ = 0 # Get civ later
@@ -11,14 +13,18 @@ class Player(object):
         return len(cityList)
 
     def numUnits(self, space):
-        unitSpace = [unit for unit in self.units if unit == space]
-        return len(unitSpace)
+        unitsOnSpace = [unit for unit in self.units if unit == space]
+        return len(unitsOnSpace)
 
-    def stockIndexes(self): #Returns indexes of units in stock
-        return [idx for idx, unit in enumerate(self.units) if unit == 0]
+    def areaIndexes(self, area=0): #Returns indexes of units in given space, defaults to stock
+        return [idx for idx, unit in enumerate(self.units) if unit == area]
+
+    def census(self): #Returns population
+        unitsOnBoard = [unit for unit in self.units if unit > 0]
+        return len(unitsOnBoard)
 
     def gainGold(self, number): #Returns number of revolts
-        stockIdxs = self.stockIndexes()
+        stockIdxs = self.areaIndexes()
 
         if len(stockIdxs) < number:
             for idx in stockIdxs:
@@ -32,7 +38,7 @@ class Player(object):
             return 0
 
     def addUnits(self, space, number):
-        stockIdxs = self.stockIndexes()
+        stockIdxs = self.areaIndexes()
         if len(stockIdxs) >= number:
             for idx in range(number):
                 self.units[stockIdxs[idx]] = space
@@ -50,8 +56,25 @@ class Player(object):
         elif units >= 2:
             return self.addUnits(space, 2)
 
+    def move(self, board):
+        pass #TODO, don't forget ships
 
+    def killUnit(self, space): #Puts one unit on given space back into stock
+        areaIdxes = self.areaIndexes(space)
+        self.units[areaIdxes[0]] = 0
 
+    def buildCity(self, space):
+        unbuiltCities = [idx for idx, city in enumerate(self.cities) if city == 0] #TODO Check if index returns multiple values
+        self.cities[unbuiltCities[0]] = space
+
+    def destroyCity(self, space):
+        city = self.cities.index(space)
+        self.cities[city] = 0
+
+    def reduceCity(self, space):
+        self.destroyCity(space)
+        unitCap = board.areas[space]
+        self.addUnits(space, unitCap)
 
 
 

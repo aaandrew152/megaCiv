@@ -1,10 +1,26 @@
-def checkSupport():
-    surplusPopulation()
+from Board import board
 
-    citySupport()
+def checkSupport(playerList):
+    surplusPopulation(playerList)
 
-def surplusPopulation():
-    pass # TODO fill in
+    citySupport(playerList)
 
-def citySupport():
-    pass # TODO fill in
+def surplusPopulation(playerList): #Goes through each player and each space by player killing units until they are at the limit
+    for player in playerList:
+        for area, unitLimit in enumerate(board.areas):
+            while player.numUnits(area) > unitLimit: # TODO check for cities!
+                player.killUnit(area)
+
+
+def citySupport(playerList):
+    for player in playerList:
+        numCities = player.numCities()
+        numUnits = player.census()
+
+        while numCities * 2 > numUnits:# TODO add possibility of inability to reduce city (lack of gold)
+            reducedCitySpace = input("Which city would you like to reduce? (Enter its space)")
+            player.reduceCity(reducedCitySpace)
+
+            numUnits = player.census()
+            numCities -= player.numCities()
+            #TODO Destroy cities beginning with the recently built ones

@@ -17,10 +17,10 @@ def citySupport(playerList):
         numCities = player.numCities()
         numUnits = player.census()
 
-        while numCities * 2 > numUnits:# TODO add possibility of inability to reduce city (lack of gold)
-            reducedCitySpace = input("Which city would you like to reduce? (Enter its space)")
+        while numCities * 2 > numUnits:# TODO add possibility of inability to reduce city (lack of units in stock)
+            reducedCitySpace = input("Which city would you like to reduce? (Enter its space)") #TODO improve choice of city
             player.reduceCity(reducedCitySpace)
 
             numUnits = player.census()
             numCities -= player.numCities()
-            #TODO Destroy cities beginning with the recently built ones
+            #TODO Reduce cities beginning with the recently built ones

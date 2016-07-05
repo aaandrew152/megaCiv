@@ -64,7 +64,7 @@ class Player(object):
         self.units[areaIdxes[0]] = 0
 
     def buildCity(self, space):
-        unbuiltCities = [idx for idx, city in enumerate(self.cities) if city == 0] #TODO Check if index returns multiple values
+        unbuiltCities = [idx for idx, city in enumerate(self.cities) if city == 0]
         self.cities[unbuiltCities[0]] = space
 
     def destroyCity(self, space):

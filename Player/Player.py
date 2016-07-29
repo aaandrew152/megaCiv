@@ -7,6 +7,8 @@ class Player(object):
         self.tradeHand = []
         self.cities = [0]*9 #Again positive values denote locations of cities
         self.ast = 0 #Starts at position 0
+        self.totalTech = 0 #total number of tech
+        self.cheapTeach = 0 #Number of tier 1 tech
 
     def numCities(self):
         cityList = [city for city in self.cities if city > 0]

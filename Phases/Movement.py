@@ -22,17 +22,11 @@ def combat(playerList):
         count = 0
         cityPresent = False
         for idx, player in enumerate(playerList):
-            units = player.numUnits(area)
-            present = []
-            if units > 0:
-                count += units
-                present.append((idx, units))
-
             if player.cityPresent(area):
                 cityPresent = True
 
-        if count > popCap and not cityPresent:
+        if board.numberInArea(area, playerList) > 0 and cityPresent:
             pass #TODO unit combat, check for multiple players
-        if count > 0 and cityPresent:
-            pass #
+        elif board.numberInArea(area, playerList) > popCap:
+            pass
     #City
